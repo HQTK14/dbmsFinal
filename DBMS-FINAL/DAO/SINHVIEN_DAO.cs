@@ -11,6 +11,18 @@ namespace DAO
 {
     public class SINHVIEN_DAO
     {
+        public static DataTable laytatcaSV()
+        {
+            Connect_Helper cnn = new Connect_Helper();
+            return cnn.GetDataTable("SELECT MSSV,TENSV, SDT FROM SINHVIEN");
+        }
+        public static DataTable laySV(string mssv)
+        {
+            string sql = string.Format(@"SELECT MSSV,TENSV, SDT FROM SINHVIEN WHERE MSSV LIKE '%{0}%'", mssv);
+            Connect_Helper cnn = new Connect_Helper();
+            return cnn.GetDataTable(sql);
+        }
+
         public static SINHVIENDTO laySinhVien(string username, string password)
         {
             SINHVIENDTO svDTO = null;

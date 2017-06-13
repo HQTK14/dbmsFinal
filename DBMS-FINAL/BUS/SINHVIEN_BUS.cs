@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using DAO;
 using DTO;
 namespace BUS
 {
     public class SINHVIEN_BUS
     {
+        public static DataTable laySV(string mssv)
+        {
+            return SINHVIEN_DAO.laySV(mssv);
+        }
+        public static DataTable laytatcaSV()
+        {
+            return SINHVIEN_DAO.laytatcaSV();
+        }
+
         public static SINHVIENDTO laySinhVien(string username, string password)
         {
             return SINHVIEN_DAO.laySinhVien(username, password);

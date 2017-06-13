@@ -13,9 +13,10 @@ using BUS;
 
 namespace UI
 {
-    public partial class LOGIN : Form
+    public partial class user_login : Form
     {
-        public LOGIN()
+        public string studentName { get; set; }
+        public user_login()
         {
             InitializeComponent();
         }
@@ -62,7 +63,7 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(radioSV.Checked)
+                if(radioSV.Checked)
             {
                 string mssv = txt_mssv.Text;
                 string pwd = txt_pwd.Text;
@@ -74,9 +75,9 @@ namespace UI
                 }
                 else
                 {
-                    SINHVIEN rb = new SINHVIEN();
-                    this.Hide();
-                    rb.Show();
+                    //SINHVIEN rb = new SINHVIEN();
+                    //this.Hide();
+                    //rb.Show();
                 }
                    
                 

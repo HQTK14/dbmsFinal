@@ -1,3 +1,5 @@
+--Laays danh sach mon hoc
+CREATE PRO_GET_ALL_STUDENT
 --ĐĂNG NHẬP
 CREATE PROC STUDENT_LOGIN
 @id char(7),
@@ -25,7 +27,32 @@ Begin
 		SET stringKQ = 'Invalid Login'
 END
 --/ĐĂNG NHẬP
-
+--tạo tài khoản
+CREATE PROC STUDENT_ACCOUNT
+@id char(7),
+@pwd nvarchar(50),
+--@KQ int OUTPUT,
+@KQ int OUT
+AS 
+Begin
+DECLARE @salt UNIQUEIDENTIFIER=NEWID()
+	UPDATE SINHVIEN
+		SET salt = @salt,
+			PasswordHash = HASHBYTES('SHA2_512', @pwd+CAST(@salt AS NVARCHAR(36)))
+			WHERE MSSV = @id
+END
+CREATE PROC STUDENT_ALREADY_HAS_ACCOUNT
+@id char(7),
+--@KQ int OUTPUT,
+@KQ int out 
+AS 
+Begin
+DECLARE @PasswordHash BINARY(64)
+set @PasswordHash = (Select * FROM SINHVIEN WHERE MSSV = @id)
+			IF(@PasswordHash == NULL) SET @KQ=-2
+			ELSE SET @KQ=1
+END
+--tạo tài khoản
 
 --Trưởng nhóm tạo nhóm
 CREATE PROC CREATE_GROUP
@@ -127,3 +154,6 @@ BEGIN
 			  AND
 			  MaSV = @mssv
 END
+--lấy ds môn
+Select MaMon, TenMon FROM MONHOC mh, SINHVIEN_MONHOC svmh WHERE svmh.mssv = '' AND svmh.MaMon = mh.MaMOn
+--lây danh sách đồ án theo môn

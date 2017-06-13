@@ -11,9 +11,9 @@ using DevExpress.XtraBars;
 
 namespace UI
 {
-    public partial class HOME : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class mainform : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public HOME()
+        public mainform()
         {
             InitializeComponent();
         }
@@ -46,6 +46,26 @@ namespace UI
         private void barHeaderItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            user_login lg = new user_login();
+            //lg.MdiParent = this;
+            lg.Show();
+        }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            user_login lg = new user_login();
+            //lg.MdiParent = this;
+            lg.Show();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ad_st_ctrl adstCtrl = new ad_st_ctrl();
+            adstCtrl.Show();
         }
     }
 }

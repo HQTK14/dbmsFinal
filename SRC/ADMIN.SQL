@@ -64,3 +64,31 @@ BEGIN
  		disableto = NULL
  	where MaMon = @MaMon
 END
+
+
+CREATE PROC ADMIN_LOGIN
+@ad_name char(7),
+@pwd nvarchar(50),
+--@KQ int OUTPUT,
+@stringKQ nvarchar(50) OUT
+AS 
+Begin
+	IF EXISTS (Select ad_name FROM QUANTRIVIEN Where ad_name = @ad_name)
+		Begin
+			SET stringKQ = (
+							Select * 
+								FROM SINHVIEN
+									 Where
+									 		MSSV = @id 
+									 		AND
+									 		PasswordHash = HASHBYTES('SHA2_512', @pwd+CAST(Salt AS NVARCHAR(36)))
+							)
+			IF(stringKQ is NULL)
+				SET stringKQ='Incorrect Password'
+			ELSE
+				--SET @KQ=1
+		End
+	ELSE
+		SET stringKQ = 'Invalid Login'
+END
+--/ĐĂNG NHẬP
