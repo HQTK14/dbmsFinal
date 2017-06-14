@@ -11,9 +11,11 @@ using DevExpress.XtraBars;
 
 namespace UI
 {
-    public partial class mainform : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class MAINFORM : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public mainform()
+        public string ID { get; set; }
+        public int role { get; set; }
+        public MAINFORM()
         {
             InitializeComponent();
         }
@@ -50,22 +52,48 @@ namespace UI
 
         private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
         {
-            user_login lg = new user_login();
+            DANGNHAP lg = new DANGNHAP();
             //lg.MdiParent = this;
             lg.Show();
         }
 
         private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
-            user_login lg = new user_login();
+            DANGNHAP lg = new DANGNHAP();
             //lg.MdiParent = this;
             lg.Show();
         }
 
         private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ad_st_ctrl adstCtrl = new ad_st_ctrl();
+            TKSV adstCtrl = new TKSV();
             adstCtrl.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //DANGNHAP dn = new DANGNHAP();
+            //dn.Show();
+            //this.ID = dn.studentID;
+            //dn.Close();
+            //if(this.ID != "")
+            {
+                //MessageBox.Show(this.ID);
+                KQDKDA stRes = new KQDKDA("1311325");
+                stRes.Show();
+                MessageBox.Show(stRes.mssv);
+            }
+            
         }
     }
 }

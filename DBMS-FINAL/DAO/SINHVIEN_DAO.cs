@@ -44,9 +44,9 @@ namespace DAO
                 while (dr.Read())
                 {
                     svDTO = new SINHVIENDTO();
-                    svDTO.MSSV1 = Convert.ToString(dr["MSSV"]);
-                    svDTO.TenSV1 = Convert.ToString(dr["TenSV"]);
-                    svDTO.STD1 = Convert.ToString(dr["SDT"]);
+                    svDTO.MSSV = Convert.ToString(dr["MSSV"]);
+                    svDTO.TenSV = Convert.ToString(dr["TenSV"]);
+                    svDTO.STD = Convert.ToString(dr["SDT"]);
                 }
             }
             catch

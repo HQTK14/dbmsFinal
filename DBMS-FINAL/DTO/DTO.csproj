@@ -48,27 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CHITIETNHOM.cs" />
-    <Compile Include="DE.cs" />
-    <Compile Include="DOAN.cs" />
-    <Compile Include="GIAOVIEN.cs" />
-    <Compile Include="GIAOVIEN_PHUTRACH_DOAN.cs" />
-    <Compile Include="GIAOVIEN_PHUTRACH_MON.cs" />
-    <Compile Include="MDIParent1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIParent1.Designer.cs">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MONHOC.cs" />
-    <Compile Include="NHOM.cs" />
+    <Compile Include="CHITIETNHOMDTO.cs" />
+    <Compile Include="DOANDTO.cs" />
+    <Compile Include="GIAOVIENDTO.cs" />
+    <Compile Include="GIAOVIEN_PHUTRACH_MON_DTO.cs" />
+    <Compile Include="GV_PHUTRACH_DA_DTO.cs" />
+    <Compile Include="MONHOCDTO.cs" />
+    <Compile Include="NHOMDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QUANTRIVIENDTO.cs" />
     <Compile Include="SINHVIENDTO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MDIParent1.resx">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

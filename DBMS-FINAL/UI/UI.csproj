@@ -59,49 +59,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ad_st_ctrl.cs">
+    <Compile Include="DKDA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ad_st_ctrl.Designer.cs">
-      <DependentUpon>ad_st_ctrl.cs</DependentUpon>
+    <Compile Include="DKDA.Designer.cs">
+      <DependentUpon>DKDA.cs</DependentUpon>
     </Compile>
-    <Compile Include="create_user.cs">
+    <Compile Include="KQDKDA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="create_user.Designer.cs">
-      <DependentUpon>create_user.cs</DependentUpon>
+    <Compile Include="KQDKDA.Designer.cs">
+      <DependentUpon>KQDKDA.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainform.cs">
+    <Compile Include="TAOTKSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainform.Designer.cs">
-      <DependentUpon>mainform.cs</DependentUpon>
+    <Compile Include="TAOTKSV.Designer.cs">
+      <DependentUpon>TAOTKSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_login.cs">
+    <Compile Include="TKSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_login.Designer.cs">
-      <DependentUpon>user_login.cs</DependentUpon>
+    <Compile Include="TKSV.Designer.cs">
+      <DependentUpon>TKSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAINFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAINFORM.Designer.cs">
+      <DependentUpon>MAINFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DANGNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DANGNHAP.Designer.cs">
+      <DependentUpon>DANGNHAP.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="ad_st_ctrl.resx">
-      <DependentUpon>ad_st_ctrl.cs</DependentUpon>
+    <EmbeddedResource Include="DKDA.resx">
+      <DependentUpon>DKDA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="create_user.resx">
-      <DependentUpon>create_user.cs</DependentUpon>
+    <EmbeddedResource Include="KQDKDA.resx">
+      <DependentUpon>KQDKDA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainform.resx">
-      <DependentUpon>mainform.cs</DependentUpon>
+    <EmbeddedResource Include="TAOTKSV.resx">
+      <DependentUpon>TAOTKSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_login.resx">
-      <DependentUpon>user_login.cs</DependentUpon>
+    <EmbeddedResource Include="TKSV.resx">
+      <DependentUpon>TKSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAINFORM.resx">
+      <DependentUpon>MAINFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DANGNHAP.resx">
+      <DependentUpon>DANGNHAP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,9 +126,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="XtraForm1.resx">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class SINHVIENDTO
+    public class GIAOVIENDTO
     {
-        public string MSSV { get; set; }
-        public string TenSV { get; set; }
+        public string MaGV { get; set; }
+        public string TenGV { get; set; }
         public string STD { get; set; }
     }
 }

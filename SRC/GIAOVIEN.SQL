@@ -11,13 +11,14 @@ CREATE TABLE DOAN
 	MaMon char(7) not null
 	CHECK (LoaiDoAn IN (N'Bài tập cộng điểm', N'Giữa Kỳ', N'Cuối Kỳ'));
 )
-CREATE PROC GRANT_PROJECT
+CREATE PROC RELEASE_PROJECT
+@MaMon char(7),
+@LoaiDoAn nvarchar(20),
 @TenDoAn nvarchar(50),
 @MoTa nvarchar(300),
-@SLSV_ToiDa int,
 @NgayKTDK date,
-@LoaiDoAn nvarchar(20),
-@MaMon char(7)
+@NgayNop date,
+@SLSV_ToiDa int
 AS
 BEGIN
 	INSERT INTO DOAN(TenDoAn,MoTa,SLSV_ToiDa,NgayKTDK,LoaiDoAn,MaMon)

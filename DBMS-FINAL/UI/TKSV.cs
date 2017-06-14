@@ -11,9 +11,9 @@ using BUS;
 
 namespace UI
 {
-    public partial class ad_st_ctrl : Form
+    public partial class TKSV : Form
     {
-        public ad_st_ctrl()
+        public TKSV()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace UI
         {
             DataTable dt1 = new DataTable();
             dt1 = SINHVIEN_BUS.laySV(textBox1.Text);
-            MessageBox.Show(textBox1.Text);
+            //MessageBox.Show(textBox1.Text);
             dataGridViewSV.DataSource = dt1;
         
         }

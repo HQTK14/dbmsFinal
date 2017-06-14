@@ -13,10 +13,11 @@ using BUS;
 
 namespace UI
 {
-    public partial class user_login : Form
+    public partial class DANGNHAP : Form
     {
         public string studentName { get; set; }
-        public user_login()
+        public string studentID { get; set; }
+        public DANGNHAP()
         {
             InitializeComponent();
         }
@@ -78,6 +79,8 @@ namespace UI
                     //SINHVIEN rb = new SINHVIEN();
                     //this.Hide();
                     //rb.Show();
+                    this.studentID = txt_mssv.Text;
+                    
                 }
                    
                 
@@ -92,6 +95,11 @@ namespace UI
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

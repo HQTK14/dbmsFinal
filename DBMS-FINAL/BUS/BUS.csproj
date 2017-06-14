@@ -42,13 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CREATE_STUDENT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CREATE_STUDENT.Designer.cs">
-      <DependentUpon>CREATE_STUDENT.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DOANBUS.cs" />
     <Compile Include="GIAOVIEN_BUS.cs" />
+    <Compile Include="MONHOCBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -68,9 +64,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CREATE_STUDENT.resx">
-      <DependentUpon>CREATE_STUDENT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
