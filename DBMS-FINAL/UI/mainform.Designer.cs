@@ -113,8 +113,9 @@
             this.ribbonPage4});
             this.ribbon.QuickToolbarItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbon.Size = new System.Drawing.Size(782, 162);
+            this.ribbon.Size = new System.Drawing.Size(985, 162);
             this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // applicationMenu1
             // 
@@ -288,6 +289,7 @@
             this.barButtonItem20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.Image")));
             this.barButtonItem20.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.LargeImage")));
             this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -300,7 +302,6 @@
             // 
             // ribbonPageGroup9
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem19);
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem20);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "IN/OUT";
@@ -386,7 +387,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 613);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(782, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(985, 31);
             // 
             // barButtonItem2
             // 
@@ -400,18 +401,21 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.labelControl1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.Appearance.Image")));
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 16F);
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Thistle;
+            this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseImage = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.labelControl1.LineVisible = true;
-            this.labelControl1.Location = new System.Drawing.Point(611, 29);
+            this.labelControl1.Location = new System.Drawing.Point(635, 35);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(136, 38);
+            this.labelControl1.Size = new System.Drawing.Size(29, 25);
             this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "HELLO user !";
+            this.labelControl1.Text = "Hi!";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // ribbonPageGroup1
             // 
@@ -425,7 +429,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 162);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(782, 451);
+            this.pictureBox1.Size = new System.Drawing.Size(985, 451);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -434,7 +438,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 644);
+            this.ClientSize = new System.Drawing.Size(985, 644);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ribbonStatusBar);

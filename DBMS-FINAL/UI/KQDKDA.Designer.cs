@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KQDKDA));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KQDKDA));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioBtnALL = new System.Windows.Forms.RadioButton();
             this.radioBtnPM = new System.Windows.Forms.RadioButton();
             this.radioBtnCK = new System.Windows.Forms.RadioButton();
             this.radioBntGK = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBoxMon = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,15 +52,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewDA = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDA)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.comboBoxMon);
@@ -80,9 +87,9 @@
             this.groupBox2.Controls.Add(this.radioBtnCK);
             this.groupBox2.Controls.Add(this.radioBntGK);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(47, 92);
+            this.groupBox2.Location = new System.Drawing.Point(18, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 194);
+            this.groupBox2.Size = new System.Drawing.Size(426, 123);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại đồ án";
@@ -91,7 +98,7 @@
             // 
             this.radioBtnALL.AutoSize = true;
             this.radioBtnALL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnALL.Location = new System.Drawing.Point(17, 154);
+            this.radioBtnALL.Location = new System.Drawing.Point(341, 46);
             this.radioBtnALL.Name = "radioBtnALL";
             this.radioBtnALL.Size = new System.Drawing.Size(79, 28);
             this.radioBtnALL.TabIndex = 3;
@@ -103,7 +110,7 @@
             // 
             this.radioBtnPM.AutoSize = true;
             this.radioBtnPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnPM.Location = new System.Drawing.Point(17, 120);
+            this.radioBtnPM.Location = new System.Drawing.Point(200, 46);
             this.radioBtnPM.Name = "radioBtnPM";
             this.radioBtnPM.Size = new System.Drawing.Size(122, 28);
             this.radioBtnPM.TabIndex = 2;
@@ -115,7 +122,7 @@
             // 
             this.radioBtnCK.AutoSize = true;
             this.radioBtnCK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnCK.Location = new System.Drawing.Point(17, 84);
+            this.radioBtnCK.Location = new System.Drawing.Point(109, 46);
             this.radioBtnCK.Name = "radioBtnCK";
             this.radioBtnCK.Size = new System.Drawing.Size(85, 28);
             this.radioBtnCK.TabIndex = 1;
@@ -135,17 +142,6 @@
             this.radioBntGK.Text = "Giữa kì";
             this.radioBntGK.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(287, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 108);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // comboBoxMon
             // 
             this.comboBoxMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,7 +149,7 @@
             this.comboBoxMon.FormattingEnabled = true;
             this.comboBoxMon.Location = new System.Drawing.Point(125, 21);
             this.comboBoxMon.Name = "comboBoxMon";
-            this.comboBoxMon.Size = new System.Drawing.Size(319, 32);
+            this.comboBoxMon.Size = new System.Drawing.Size(255, 32);
             this.comboBoxMon.TabIndex = 2;
             this.comboBoxMon.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -178,9 +174,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(38, 314);
+            this.groupBox1.Location = new System.Drawing.Point(35, 348);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 204);
+            this.groupBox1.Size = new System.Drawing.Size(397, 190);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết môn học";
@@ -316,14 +312,71 @@
             this.dataGridViewDA.TabIndex = 0;
             this.dataGridViewDA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDA_CellContentClick);
             // 
-            // STUDENT_REGISTER_RESULT
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(405, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 55);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(18, 208);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(426, 118);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Dealine";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 32);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "TỪ NGÀY";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 79);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 20);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "ĐẾN NGÀY";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(130, 32);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(232, 26);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(130, 73);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(232, 26);
+            this.dateTimePicker2.TabIndex = 3;
+            // 
+            // KQDKDA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 564);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "STUDENT_REGISTER_RESULT";
+            this.Name = "KQDKDA";
             this.Text = "KẾT QUẢ ĐĂNG KÍ ĐỒ ÁN";
             this.Load += new System.EventHandler(this.STUDENT_REGISTER_RESULT_Load);
             this.panel1.ResumeLayout(false);
@@ -334,6 +387,8 @@
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDA)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -360,5 +415,10 @@
         private System.Windows.Forms.RadioButton radioBtnCK;
         private System.Windows.Forms.RadioButton radioBntGK;
         private System.Windows.Forms.RadioButton radioBtnALL;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -15,8 +15,8 @@ namespace UI
 {
     public partial class DANGNHAP : Form
     {
-        public string studentName { get; set; }
-        public string studentID { get; set; }
+        public string DN_StudentName { get; set; }
+        public string DN_StudentID { get; set; }
         public DANGNHAP()
         {
             InitializeComponent();
@@ -79,8 +79,12 @@ namespace UI
                     //SINHVIEN rb = new SINHVIEN();
                     //this.Hide();
                     //rb.Show();
-                    this.studentID = txt_mssv.Text;
-                    
+           
+                    this.DN_StudentID = txt_mssv.Text;
+                    this.DN_StudentName = svDTO.TenSV;
+                    MessageBox.Show("Đăng nhập thành công "+this.DN_StudentID + " " + this.DN_StudentName);
+                    MAINFORM mfr = new MAINFORM(this.DN_StudentID, this.DN_StudentName);
+                    mfr.Show();
                 }
                    
                 
