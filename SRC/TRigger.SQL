@@ -41,3 +41,21 @@
       SET @KQ=1
       END
      -----------------------------
+     CREATE PROC CHECK_EXCEED_NUMBER_MEMBER_Of_GROUP
+    
+     @MaDoAn INT,
+     @MaNhom INT,
+     @KQ INT OUT
+      AS
+     Begin
+     DECLARE @allow_numb INT, @x_numb INT
+     SET  @x_numb = (SELECT count(*) from NHOM 
+     Where maDA = @MaDoAn AND MaNhom = @MaNhom )
+     
+     SET @allow_numb = (Select SLSV_ToiDa from DOAN 
+     Where  MaDoAn = @MaDoAn)
+     if (@x_numb < @allow_numb)
+      SET @KQ = 2
+      ELSE 
+      SET @KQ=1
+      END

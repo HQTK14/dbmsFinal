@@ -59,7 +59,18 @@ CREATE TABLE NHOM
 	TruongNhom char(7) not null,
 	PRIMARY KEY (MaNhom, MaDA)
 )
-
+--9 chi tiết nhóm
+CREATE TABLE CHITIET_NHOM
+(
+	MaNhom int not null,
+	MaDA int not null,
+	MaSV char(7) not null,
+	--Diem float,
+	PRIMARY KEY (MaNhom, MaDA)
+)
+ALTER TABLE CHITIET_NHOM ADD Diem float
+ALTER TABLE dbo.CHITIET_NHOM
+ADD CONSTRAINT CHK_Diem CHECK (Diem>=0.0 AND Diem <=10.0)
 --5
 CREATE TABLE GV_PHUTRACH_MON
 (
@@ -102,18 +113,7 @@ CREATE TABLE GV_PHUTRACH_DA
 	PRIMARY KEY (MaGV, MaDoAn)
 )
 
---9 chi tiết nhóm
-CREATE TABLE CHITIET_NHOM
-(
-	MaNhom int not null,
-	MaDA int not null,
-	MaSV char(7) not null,
-	--Diem float,
-	PRIMARY KEY (MaNhom, MaDA)
-)
-ALTER TABLE CHITIET_NHOM ADD Diem float
-ALTER TABLE dbo.CHITIET_NHOM
-ADD CONSTRAINT CHK_Diem CHECK (Diem>=0.0 AND Diem <=10.0)
+
 
 --10
 -- CREATE TABLE TAIKHOAN

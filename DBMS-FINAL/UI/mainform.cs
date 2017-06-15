@@ -98,7 +98,7 @@ namespace UI
             //if(this.ID != "")
             {
                 //MessageBox.Show(this.ID);
-                KQDKDA stRes = new KQDKDA("1311325");
+                KQDKDA stRes = new KQDKDA(this.MF_StudentID);
                 stRes.Show();
                 MessageBox.Show(stRes.mssv);
             }
@@ -119,6 +119,31 @@ namespace UI
 
         private void labelControl1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DKDA dk = new DKDA(this.MF_StudentID);
+            MessageBox.Show(dk.mssv);
+            dk.Show();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private DialogResult PreClosingConfirmation()
+        {
+            DialogResult res = System.Windows.Forms.MessageBox.Show(" Do you want to quit?          ", "Quit...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return res;
+        }
+        private void MAINFORM_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure To Exit Programme ?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
 
         }
     }

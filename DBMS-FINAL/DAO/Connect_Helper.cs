@@ -11,7 +11,8 @@ namespace DAO
     public class Connect_Helper
     {
         public SqlConnection connect = null;
-        public const string connectionString = "Data Source=KTJ\\SQLEXPRESS;Initial Catalog=\"project registration\";Integrated Security=True";
+        //public const string connectionString = "Data Source=KTJ\\SQLEXPRESS;Initial Catalog=\"project registration\";Integrated Security=True";
+        public const string connectionString = "Server=KTJ\\SQLEXPRESS;Database=project registration;Trusted_Connection=True;";
         //public const string connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString
         public void OpenSection()
         {

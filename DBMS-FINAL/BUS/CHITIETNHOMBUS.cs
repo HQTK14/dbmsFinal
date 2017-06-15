@@ -21,5 +21,9 @@ namespace BUS
             return CHITIETNHOMDAO.dangkiNhom(ctDTO);
         }
 
+        public static int maxMemberNhom(int manhom, int madoan)
+        {
+            return CHITIETNHOMDAO.maxMemberNhom(manhom, madoan);
+        }
     }
 }

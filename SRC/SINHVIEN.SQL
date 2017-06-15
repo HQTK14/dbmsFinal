@@ -77,6 +77,18 @@ SET @KQ=2
 ELSE set @KQ =1
 END
 
+--get leader
+CREATE PROC RETRIEVE_LEADER_GROUP
+@MaDA int,
+@MaNhom int,
+@stringKQ char(7) OUT
+AS
+BEGIN
+SET @stringKQ =  (Select TruongNhom FROM NHOM Where MaNhom= @MaNhom AND MaDA = @MaDA)
+END
+-- DECLARE @trg CHAR(7)
+-- EXEC RETRIEVE_LEADER_GROUP 12, 13, @trg OUT
+-- PRINT @trg
 --huywr đồ án
 CREATE PROC DESELECT_PROJECT
 @MaDA int

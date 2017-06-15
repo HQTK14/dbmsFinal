@@ -18,5 +18,15 @@ namespace BUS
         {
             return NHOMDAO.TaoNhomMoi(tennhom, madoan, truongnhom);
         }
+
+        public static int maxnhom(int madoan)
+        {
+            return NHOMDAO.maxnhom(madoan);
+        }
+
+        public static string Laytruongnhom(int madoan, int manhom)
+        {
+            return NHOMDAO.Laytruongnhom(madoan, manhom);
+        }
     }
 }

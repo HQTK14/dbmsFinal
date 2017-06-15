@@ -17,9 +17,11 @@ namespace UI
     {
         public string DN_StudentName { get; set; }
         public string DN_StudentID { get; set; }
+        public int attempt { get; set; }
         public DANGNHAP()
         {
             InitializeComponent();
+            this.attempt = 0;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -64,6 +66,11 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(this.attempt==3)
+            {
+                MessageBox.Show("too many login failures So the Program terminated!");
+                Application.Exit();
+            }
                 if(radioSV.Checked)
             {
                 string mssv = txt_mssv.Text;
@@ -72,7 +79,9 @@ namespace UI
                 svDTO = SINHVIEN_BUS.laySinhVien(mssv, pwd);
                 if (svDTO == null)
                 {
+                    this.attempt++;
                     MessageBox.Show("INVALID LOGIN");
+                    return;
                 }
                 else
                 {
@@ -83,12 +92,28 @@ namespace UI
                     this.DN_StudentID = txt_mssv.Text;
                     this.DN_StudentName = svDTO.TenSV;
                     MessageBox.Show("Đăng nhập thành công "+this.DN_StudentID + " " + this.DN_StudentName);
+
                     MAINFORM mfr = new MAINFORM(this.DN_StudentID, this.DN_StudentName);
+                    this.Hide();
                     mfr.Show();
+                    
                 }
-                   
+
                 
 
+            }
+            else if (radioGV.Checked)
+            {
+                //lacking
+            }
+                else if (radioQTV.Checked)
+            {
+                //lacking
+            }
+                else
+            {
+                MessageBox.Show("Ban chua chon loai nguoi dung!");
+                return;
             }
 
         }
