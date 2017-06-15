@@ -11,6 +11,10 @@ namespace BUS
 {
     public class SINHVIEN_BUS
     {
+        public static string LoginStyleStoreProcedure(string mssv, string pass)
+        {
+            return SINHVIEN_DAO.LoginStyleStoreProcedure(mssv, pass);
+        }
         public static DataTable laySV(string mssv)
         {
             return SINHVIEN_DAO.laySV(mssv);

@@ -22,7 +22,31 @@ namespace DAO
             Connect_Helper cnn = new Connect_Helper();
             return cnn.GetDataTable(sql);
         }
-
+        public static string LoginStyleStoreProcedure(string mssv, string pass)
+        {
+            try
+            {
+                Connect_Helper cnn = new Connect_Helper();
+                cnn.OpenSection();
+                string procName = "STUDENT_LOGIN";
+                SqlCommand sql = new SqlCommand(procName);
+                sql.CommandType = CommandType.StoredProcedure;
+                sql.Connection = cnn.connect;
+                sql.Parameters.Add("@id", SqlDbType.Char).Value = mssv;
+                sql.Parameters.Add("@pwd", SqlDbType.NVarChar).Value = pass;
+                sql.Parameters.Add("@stringKQ", SqlDbType.NVarChar).Direction = ParameterDirection.Output;
+                int KQ = sql.ExecuteNonQuery();
+                if (KQ > 0)
+                {
+                    return (string)sql.Parameters["@tringKQ"].Value;
+                }
+                else return "EXECUTE FAILED";
+            }
+            catch
+            {
+                return "CATCH";
+            }
+        }
         public static SINHVIENDTO laySinhVien(string username, string password)
         {
             SINHVIENDTO svDTO = null;
@@ -49,9 +73,9 @@ namespace DAO
                     svDTO.STD = Convert.ToString(dr["SDT"]);
                 }
             }
-            catch
+            catch(SqlException ex)
             {
-
+                throw ex;
             }
             finally
             {

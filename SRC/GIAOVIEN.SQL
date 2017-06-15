@@ -1,3 +1,27 @@
+--đăng nhập
+ALTER PROC TEACHER_LOGIN
+@id char(7),
+@pwd nvarchar(50),
+@stringKQ nvarchar(50) OUT
+AS 
+Begin
+	IF EXISTS (Select TenGV FROM dbo.GIAOVIEN Where MaGV=@id)
+		Begin
+			SET @stringKQ = (
+							Select TenGV 
+								FROM GIAOVIEN
+									 Where
+									 		MaGV = @id 
+									 		AND
+									 		PasswordHash = HASHBYTES('SHA2_512', @pwd+CAST(Salt AS NVARCHAR(36)))
+							)
+			IF(@stringKQ is NULL)
+				SET @stringKQ='Incorrect Password'
+		
+		END
+	ELSE
+		SET @stringKQ = 'Invalid Login'
+END
 --ra đồ án
 CREATE TABLE DOAN
 (

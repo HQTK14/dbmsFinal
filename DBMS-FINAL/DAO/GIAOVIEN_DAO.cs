@@ -20,5 +20,70 @@ namespace DAO
             DataTable dt = new DataTable();
             return dt;
         }
+
+        public static string DangNhap(string magv, string password)
+        {
+
+            //    Connect_Helper cnn = new Connect_Helper();
+            //    cnn.OpenSection();
+            //    string ProcName = "TEACHER_LOGIN";
+            //    SqlCommand sqlcmd = new SqlCommand(ProcName);
+            //    sqlcmd.CommandType = CommandType.StoredProcedure;
+            //    sqlcmd.Connection = cnn.connect;
+            //    //SqlParameter[] prs =
+            //    //{
+            //    //    new SqlParameter("@id", SqlDbType.Char),
+            //    //    new SqlParameter("@pwd", SqlDbType.NVarChar),
+            //    //    new SqlParameter("@stringKQ", SqlDbType.NVarChar)
+            //    //};
+            //    //prs[0].Value = magv;
+            //    //prs[1].Value = password;
+            //    //prs[2].Direction = ParameterDirection.Output;
+            //    //sqlcmd.Parameters.AddRange(prs);
+            //    sqlcmd.Parameters.Add("@id", SqlDbType.Char).Value=magv;
+            //    sqlcmd.Parameters.Add("@pwd", SqlDbType.NVarChar).Value=password;
+            //    sqlcmd.Parameters.Add("@stringKQ", SqlDbType.NVarChar).Direction = ParameterDirection.Output;
+            //   int n = sqlcmd.ExecuteNonQuery();
+            //    string KQ;
+            //    if (n > 0)
+            //    {
+            //        KQ = (string)sqlcmd.Parameters["stringKQ"].Value;
+            //        cnn.CloseSection();
+            //    }
+            //    else KQ = "";
+            //    return KQ;
+
+            //}
+
+            //catch
+            //{
+            //    return "";
+            //}
+            try
+            {
+                Connect_Helper connectDB = new Connect_Helper();
+                connectDB.OpenSection();
+                string procedureName = "TEACHER_LOGIN";
+                SqlCommand cmd = new SqlCommand(procedureName);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = connectDB.connect;
+
+                cmd.Parameters.Add("@id", SqlDbType.Char).Value = magv;
+                cmd.Parameters.Add("@pwd", SqlDbType.NVarChar).Value = password;
+                cmd.Parameters.Add("@stringKQ", SqlDbType.NVarChar).Direction = ParameterDirection.Output;
+                int KQ = cmd.ExecuteNonQuery();
+                string str = "";
+                if (KQ > 0)
+                {
+                    str = (string)cmd.Parameters["stringKQ"].Value;
+                }
+                connectDB.CloseSection();
+                return str;
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 }

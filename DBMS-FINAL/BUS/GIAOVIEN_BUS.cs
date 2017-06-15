@@ -19,5 +19,10 @@ namespace BUS
         {
             return GIAOVIEN_DAO.layDanhSachDoAnPhuTrach_Mon(maGV, maMon);
         }
+
+        public static string DangNhap(string magv, string password)
+        {
+            return GIAOVIEN_DAO.DangNhap(magv, password);
+        }
     }
 }

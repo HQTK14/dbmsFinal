@@ -1,6 +1,7 @@
 --Laays danh sach mon hoc
-CREATE PRO_GET_ALL_STUDENT
---ĐĂNG NHẬP
+-- DECLARE @tenSV NVARCHAR(50)
+-- EXEC STUDENT_LOGIN '1414012','NTPa32541',@tenSV OUT
+-- PRINT @tenSV
 CREATE PROC STUDENT_LOGIN
 @id char(7),
 @pwd nvarchar(50),
@@ -10,7 +11,7 @@ AS
 Begin
 	IF EXISTS (Select MSSV FROM SINHVIEN Where MSSV = @id)
 		Begin
-			SET stringKQ = (
+			SET @stringKQ = (
 							Select TENSV 
 								FROM SINHVIEN
 									 Where
@@ -18,13 +19,11 @@ Begin
 									 		AND
 									 		PasswordHash = HASHBYTES('SHA2_512', @pwd+CAST(Salt AS NVARCHAR(36)))
 							)
-			IF(stringKQ is NULL)
-				SET stringKQ='Incorrect Password'
-			ELSE
-				--SET @KQ=1
+			IF(@stringKQ is NULL)
+				SET @stringKQ='Incorrect Password'
 		End
 	ELSE
-		SET stringKQ = 'Invalid Login'
+		SET @stringKQ = 'Invalid Login'
 END
 --/ĐĂNG NHẬP
 --tạo tài khoản
