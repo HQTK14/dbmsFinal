@@ -56,19 +56,26 @@ END
 
 --Trưởng nhóm tạo nhóm
 CREATE PROC CREATE_GROUP
-@MaDA int
-@TenNhom nvarchar(50)
+@MaDA INT,
+@TenNhom nvarchar(50),
 @TruongNhom char(7)
-@MaDe int
 AS
 BEGIN
-	Insert into NHOM(MaDA,TenNhom,TruongNhom,MaDe)
-	VALUES(@MaDA, @TenNhom, @TruongNhom , @MaDe)
+	Insert into NHOM(MaDA,TenNhom,TruongNhom)
+	VALUES(@MaDA, @TenNhom, @TruongNhom)
 END
 --/Trưởng nhóm tạo nhóm
 
 CREATE PROC CHECK_IS_LEADER_GROUP
-@
+@MSSV char(7),
+@MaDA int,
+@KQ int
+AS
+BEGIN
+IF EXISTS (Select * FROM NHOM Where MaDA = @MaDA AND  TruongNhom= @MSSV)
+SET @KQ=2
+ELSE set @KQ =1
+END
 
 --huywr đồ án
 CREATE PROC DESELECT_PROJECT
@@ -131,14 +138,15 @@ END
 
 	
 --Đăng kí nhóm
+--Đăng kí nhóm
 CREATE PROC STUDENT_REGISTER_GROUP
-@IDnhom int,
-@IDDA int,
-@mssv char(7)
+@MaNhom int,
+@MaDoAn int,
+@MaSV char(7)
 AS
 BEGIN
-	Insert into NHOM(MaNhom, MaDA, MaSV)
-		VALUES(@IDnhom, @IDDA, @mssv)
+	Insert into CHITIET_NHOM(MaNhom, MaDA, MaSV)
+		VALUES(@MaNhom, @MaDoAn, @MaSV)
 END
 --rời nhóm
 CREATE PROC STUDENT_LEAVE_GROUP

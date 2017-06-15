@@ -17,7 +17,8 @@ namespace UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MAINFORM());
-            Application.Run(new DANGNHAP());
+            //Application.Run(new DANGNHAP());
+            Application.Run(new DKDA("1311325"));
         }
     }
 }

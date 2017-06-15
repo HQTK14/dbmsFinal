@@ -10,7 +10,7 @@ namespace DTO
     {
         public int MaNhom { get; set; }
         public int MaDA { get; set; }
-        public int MSSV { get; set; }
+        public string MSSV { get; set; }
 
     }
 }

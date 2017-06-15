@@ -57,7 +57,6 @@ CREATE TABLE NHOM
 	MaDA int not null, --them maDA vào làm khóa chính với MaNhom
 	TenNhom nvarchar(50) not null,
 	TruongNhom char(7) not null,
-	MaDe int not null,
 	PRIMARY KEY (MaNhom, MaDA)
 )
 
@@ -76,6 +75,7 @@ CREATE TABLE DOAN
 	TenDoAn nvarchar(50) not null,
 	--MoTa nvarchar(300) not null,
 	SLSV_ToiDa int not null,
+	SLN_ToiDa int not null,
 	NgayKTDK date not null,
 	NgayNop date not null,
 	--LoaiDoAn nvarchar(20),

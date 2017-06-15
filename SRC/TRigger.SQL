@@ -22,3 +22,22 @@
      rollback transaction 
      END
      END
+     -----------------------------
+     CREATE PROC CHECK_EXCEED_NUMBER_Of_GROUP
+    
+     @MaDoAn INT,
+     @KQ INT
+      AS
+     Begin
+     DECLARE @allow_numb INT, @x_numb INT
+     SET  @x_numb = (SELECT count(*) from NHOM 
+     Where maDA = @MaDoAn )
+     
+     SET @allow_numb = (Select SLN_ToiDa from DOAN 
+     Where  MaDoAn = @MaDoAn)
+     if (@x_numb < @allow_numb)
+      SET @KQ = 2
+      ELSE 
+      SET @KQ=1
+      END
+     -----------------------------

@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CHITIETNHOMDAO.cs" />
     <Compile Include="Connect_Helper.cs" />
     <Compile Include="DOANDAO.cs" />
     <Compile Include="GIAOVIEN_DAO.cs" />
     <Compile Include="MONHOCDAO.cs" />
+    <Compile Include="NHOMDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SINHVIEN_DAO.cs" />
   </ItemGroup>

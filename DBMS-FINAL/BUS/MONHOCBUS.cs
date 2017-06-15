@@ -11,10 +11,10 @@ namespace BUS
 {
    public class MONHOCBUS
     {
-        public static IList<MONHOCDTO> LAYDSMONHOC(string maSV)
-        {
-            return MONHOCDAO.LAYDSMONHOC(maSV);
-        }
+        //public static IList<MONHOCDTO> LAYDSMONHOC(string maSV)
+        //{
+        //    return MONHOCDAO.LAYDSMONHOC(maSV);
+        //}
         public static DataTable _LAYDSMONHOC(string maSV)
         {
             return MONHOCDAO._LAYDSMONHOC(maSV);

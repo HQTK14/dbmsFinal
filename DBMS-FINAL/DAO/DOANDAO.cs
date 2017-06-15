@@ -18,7 +18,7 @@ namespace DAO
                 default:break;
                 case 0:
                     sql = string.Format(@"
-                                          SELECT da.TenDoAn, da.LoaiDoAn,nh.TenNhom 
+                                          SELECT da.MaDoAn, da.TenDoAn, da.LoaiDoAn,nh.TenNhom 
                                           FROM dbo.DOAN AS da,
 	                                           dbo.NHOM AS nh,
 	                                           dbo.MONHOC mh,
@@ -38,7 +38,7 @@ namespace DAO
                     break;
                 case 1:
                     sql = string.Format(@"
-                                          SELECT da.TenDoAn, da.LoaiDoAn,nh.TenNhom                                        
+                                          SELECT da.MaDoAn,da.TenDoAn, da.LoaiDoAn,nh.TenNhom                                        
                                           FROM   dbo.DOAN AS da,
 	                                             dbo.NHOM AS nh,
 	                                             dbo.MONHOC mh,
@@ -56,7 +56,7 @@ namespace DAO
                     break;
                 case 2:
                     sql = string.Format(@"
-                                          SELECT da.TenDoAn, da.LoaiDoAn,nh.TenNhom                                        
+                                          SELECT da.MaDoAn,da.TenDoAn, da.LoaiDoAn,nh.TenNhom                                        
                                           FROM   dbo.DOAN AS da,
 	                                             dbo.NHOM AS nh,
 	                                             dbo.MONHOC mh,
@@ -74,7 +74,7 @@ namespace DAO
                     break;
                 case 3:
                     sql = string.Format(@"
-                                          SELECT da.TenDoAn, da.LoaiDoAn,nh.TenNhom                                        
+                                          SELECT da.MaDoAn,da.TenDoAn, da.LoaiDoAn,nh.TenNhom                                        
                                           FROM   dbo.DOAN AS da,
 	                                             dbo.NHOM AS nh,
 	                                             dbo.MONHOC mh,

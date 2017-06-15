@@ -61,34 +61,8 @@ namespace DAO
 
         }
 
-
-        public static int dangkiNhom(int maNhom, string MSSV, int MaDA)
-        {
-            try
-            {
-                Connect_Helper cnn = new Connect_Helper();
-                cnn.OpenSection();
-                string ProcName = "";
-                SqlParameter[] prs = {
-                new SqlParameter("@MaNhom",SqlDbType.Int),
-                new SqlParameter("@MaSV",SqlDbType.VarChar)};
-                prs[0].Value = maNhom;
-                prs[1].Value = MSSV;
-                SqlCommand sqlcmd = new SqlCommand(ProcName, cnn.connect);
-                sqlcmd.CommandType = CommandType.StoredProcedure;
-                sqlcmd.Parameters.AddRange(prs);
-                int KQ = sqlcmd.ExecuteNonQuery();
-                cnn.CloseSection();
-                if (KQ > 0)
-                    return 1;
-                else return 0;
-            }
-            catch
-            {
-                return -1;
-            }
-
-        }
+        //int maNhom, string MSSV, int MaDA
+       
         public static int huyNhom(int maNhom, string mssv)
         {
             try
