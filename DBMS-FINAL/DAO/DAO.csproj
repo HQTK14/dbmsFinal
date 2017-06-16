@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADMIN_DAO.cs" />
     <Compile Include="CHITIETNHOMDAO.cs" />
     <Compile Include="Connect_Helper.cs" />
     <Compile Include="DOANDAO.cs" />

@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnSignIn);
             this.panel1.Controls.Add(this.label5);
@@ -206,14 +206,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(340, 503);
             this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ForeColor = System.Drawing.Color.Cyan;
             this.MaximizeBox = false;
             this.Name = "DANGNHAP";
-            this.Text = "Form1";
+            this.Text = "ĐĂNG NHẬP";
             this.Load += new System.EventHandler(this.LOGIN_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

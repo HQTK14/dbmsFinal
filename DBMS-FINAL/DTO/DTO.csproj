@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADMIN_DTO.cs" />
     <Compile Include="CHITIETNHOMDTO.cs" />
     <Compile Include="DOANDTO.cs" />
     <Compile Include="GIAOVIENDTO.cs" />

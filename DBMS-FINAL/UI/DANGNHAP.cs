@@ -76,33 +76,33 @@ namespace UI
                 string mssv = txt_mssv.Text;
                 string pwd = txt_pwd.Text;
                 SINHVIENDTO svDTO = null;
-                svDTO = new SINHVIENDTO();
-                svDTO.TenSV=SINHVIEN_BUS.LoginStyleStoreProcedure(mssv, pwd);
-                //svDTO = SINHVIEN_BUS.laySinhVien(mssv, pwd);
-                //if (svDTO == null)
-                //{
-                //    this.attempt++;
-                //    MessageBox.Show("INVALID LOGIN");
-                //    return;
-                //}
-                MessageBox.Show(svDTO.TenSV);
-                //else
-                //{
-                //    //SINHVIEN rb = new SINHVIEN();
-                //    //this.Hide();
-                //    //rb.Show();
-           
-                //    this.DN_StudentID = txt_mssv.Text;
-                //    this.DN_StudentName = svDTO.TenSV;
-                //    MessageBox.Show("Đăng nhập thành công "+this.DN_StudentID + " " + this.DN_StudentName);
+                //svDTO = new SINHVIENDTO();
+                //svDTO.TenSV=SINHVIEN_BUS.LoginStyleStoreProcedure(mssv, pwd);
+                svDTO = SINHVIEN_BUS.laySinhVien(mssv, pwd);
+                if (svDTO == null)
+                {
+                    this.attempt++;
+                    MessageBox.Show("INVALID LOGIN");
+                    return;
+                }
+                //MessageBox.Show(svDTO.TenSV);
+                else
+                {
+                    //SINHVIEN rb = new SINHVIEN();
+                    //this.Hide();
+                    //rb.Show();
 
-                //    MAINFORM mfr = new MAINFORM(this.DN_StudentID, this.DN_StudentName);
-                //    this.Hide();
-                //    mfr.Show();
-                    
-                //}
+                    this.DN_StudentID = txt_mssv.Text;
+                    this.DN_StudentName = svDTO.TenSV;
+                    MessageBox.Show("Đăng nhập thành công " + this.DN_StudentID + " " + this.DN_StudentName);
 
-                
+                    MAINFORM mfr = new MAINFORM(this.DN_StudentID, this.DN_StudentName);
+                    this.Hide();
+                    mfr.Show();
+
+                }
+
+
 
             }
             else if (radioGV.Checked)
@@ -110,36 +110,77 @@ namespace UI
                 //lacking
                 string mssv = txt_mssv.Text;
                 string pwd = txt_pwd.Text;
-                string tengv = GIAOVIEN_BUS.DangNhap(mssv, pwd);
-                if(tengv == "Incorrect Password")
+                GIAOVIENDTO gvDTO = null;
+                gvDTO = GIAOVIEN_BUS.LayGV(mssv, pwd);
+                if (gvDTO == null)
                 {
-                    MessageBox.Show("Incorrect Password");
-                    return;
-                 
-                }
-                else if(tengv == "Invalid Login")
-                {
-                    MessageBox.Show("Invalid Login");
+                    this.attempt++;
+                    MessageBox.Show("INVALID LOGIN");
                     return;
                 }
-                else if(tengv != "")
+
+                //string tengv = GIAOVIEN_BUS.DangNhap(mssv, pwd);
+                //if(tengv == "Incorrect Password")
+                //{
+                //    MessageBox.Show("Incorrect Password");
+                //    return;
+
+                //}
+                //else if(tengv == "Invalid Login")
+                //{
+                //    MessageBox.Show("Invalid Login");
+                //    return;
+                //}
+                //else if(tengv != "")
+                //{
+                //    this.DN_StudentName = tengv;
+                //    this.DN_StudentID = txt_mssv.Text;
+                //    MAINFORM mfr = new MAINFORM(this.DN_StudentID, this.DN_StudentName);
+                //    this.Hide();
+                //    mfr.Show();
+                //}
+                //else if (tengv == "")
+                //{
+                //    MessageBox.Show("CLGT");
+                //    return; 
+                //}
+                else
                 {
-                    this.DN_StudentName = tengv;
+                    //SINHVIEN rb = new SINHVIEN();
+                    //this.Hide();
+                    //rb.Show();
+
                     this.DN_StudentID = txt_mssv.Text;
+                    this.DN_StudentName = gvDTO.TenGV;
+                    MessageBox.Show("Đăng nhập thành công " + this.DN_StudentID + " " + this.DN_StudentName);
+
                     MAINFORM mfr = new MAINFORM(this.DN_StudentID, this.DN_StudentName);
                     this.Hide();
                     mfr.Show();
-                }
-                else if (tengv == "")
-                {
-                    MessageBox.Show("CLGT");
-                    return; 
+
                 }
             }
                 else if (radioQTV.Checked)
             {
+                if (this.attempt == 3)
+                {
+                    MessageBox.Show("too many login failures So the Program terminated!");
+                    Application.Exit();
+                }
                 //lacking
+                if (ADMIN_BUS.XacMinh(txt_mssv.Text, txt_pwd.Text))
+                {
+                    MessageBox.Show("HI ADMIN");
+
+                }
+                else
+                {
+                    this.attempt++;
+                    MessageBox.Show("INVALID LOGIN");
+                    return;
+                }
             }
+
                 else
             {
                 MessageBox.Show("Ban chua chon loai nguoi dung!");

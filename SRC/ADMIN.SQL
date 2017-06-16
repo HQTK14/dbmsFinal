@@ -66,29 +66,71 @@ BEGIN
 END
 
 
-CREATE PROC ADMIN_LOGIN
-@ad_name char(7),
+ALTEr PROC ADMIN_LOGIN
+@ad_name varchar(20),
 @pwd nvarchar(50),
 --@KQ int OUTPUT,
-@stringKQ nvarchar(50) OUT
+@KQ int OUT
 AS 
-Begin
+BEGIN
+DECLARE @adName VARCHAR(50)
 	IF EXISTS (Select ad_name FROM QUANTRIVIEN Where ad_name = @ad_name)
 		Begin
-			SET stringKQ = (
-							Select * 
-								FROM SINHVIEN
+			SET @adName = (
+							Select ad_name
+								FROM dbo.QUANTRIVIEN
 									 Where
-									 		MSSV = @id 
+									 		ad_name = @ad_name
 									 		AND
 									 		PasswordHash = HASHBYTES('SHA2_512', @pwd+CAST(Salt AS NVARCHAR(36)))
 							)
-			IF(stringKQ is NULL)
-				SET stringKQ='Incorrect Password'
+			IF(@adName is not  NULL)
+				SET @KQ=1
 			ELSE
-				--SET @KQ=1
+				SET @KQ=0
 		End
 	ELSE
-		SET stringKQ = 'Invalid Login'
+		SET @KQ = -1
 END
 --/ĐĂNG NHẬP
+--THÊM MÔN HỌC
+CREATE PROC CREATE_SUBJECT
+@MaMon char(7),
+@TenMon nvarchar(50),
+@SoTinChi int,
+@NgayDB DATE,
+@NgayKT date
+AS
+BEGIN
+ Insert into MONHOC(MaMon, TenMon, SoTinChi, NgayDB, NgayKT)
+ 	VALUES (@MaMon, @TenMon, @SoTinChi, @NgayDB, @NgayKT)
+END
+--Sửa môn học
+CREATE PROC UPDATE_SUBJECT
+@MaMon char(7),
+@TenMon nvarchar(50),
+@SoTinChi int,
+@NgayDB DATE,
+@NgayKT date
+AS
+BEGIN
+ UPDATE MONHOC
+ SET TenMon = @TenMon, 
+ 	 SoTinChi = @SoTinChi,
+ 	 NgayDB = @NgayDB,
+ 	 NgayKT = @NgayKT
+ Where MaMon = @MaMon
+END
+--Xóa Môn
+CREATE PROC REMOVE_SUBJECT
+@MaMon CHAR(7)
+AS
+BEGIN
+ Delete FROM MONHOC Where MaMon = @MaMon
+END
+--lấy ds môn học
+CREATE PROC SELECT_ALL_SUBJECT
+AS
+BEGIN
+ Select * FROM MONHOC
+ END

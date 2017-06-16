@@ -59,17 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DKDA.cs">
+    <Compile Include="GVRDA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DKDA.Designer.cs">
-      <DependentUpon>DKDA.cs</DependentUpon>
+    <Compile Include="GVRDA.Designer.cs">
+      <DependentUpon>GVRDA.cs</DependentUpon>
     </Compile>
     <Compile Include="KQDKDA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KQDKDA.Designer.cs">
       <DependentUpon>KQDKDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLMH.Designer.cs">
+      <DependentUpon>QLMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SVDKDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SVDKDA.Designer.cs">
+      <DependentUpon>SVDKDA.cs</DependentUpon>
     </Compile>
     <Compile Include="TAOTKSV.cs">
       <SubType>Form</SubType>
@@ -97,11 +109,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DKDA.resx">
-      <DependentUpon>DKDA.cs</DependentUpon>
+    <EmbeddedResource Include="GVRDA.resx">
+      <DependentUpon>GVRDA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KQDKDA.resx">
       <DependentUpon>KQDKDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLMH.resx">
+      <DependentUpon>QLMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SVDKDA.resx">
+      <DependentUpon>SVDKDA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TAOTKSV.resx">
       <DependentUpon>TAOTKSV.cs</DependentUpon>

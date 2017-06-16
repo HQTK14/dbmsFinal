@@ -146,5 +146,10 @@ namespace UI
             }
 
         }
+
+        private void barButtonItem21_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

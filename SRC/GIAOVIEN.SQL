@@ -1,4 +1,15 @@
+CREATE GET_ALL_SUBJECT
+@magv Char(7)
+AS
+BEGIN
+SELECT mh.MaMon, mh.TenMon FROM GV_PHUTRACH_MON AS pt, MONHOC AS mh
+Where pt.magv = @magv AND pt.MaMon = mh.MaMon
+END
 --đăng nhập
+AS
+BEGIN
+SELECT * FROM GV_PHUTRACH_MON
+END
 ALTER PROC TEACHER_LOGIN
 @id char(7),
 @pwd nvarchar(50),

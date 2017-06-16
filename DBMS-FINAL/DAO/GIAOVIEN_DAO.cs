@@ -5,20 +5,78 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-
+using DTO;
 namespace DAO
 {
     public class GIAOVIEN_DAO
     {
-        public static List<string> layDanhSachMon_PhuTrach(string maGV)
+        public static  GIAOVIENDTO LayGV(string username, string password)
         {
-            List<string> KQ = new List<string>();
-            return KQ;
+            GIAOVIENDTO gvDTO = null;
+            try
+            {
+                Connect_Helper cnn = new Connect_Helper();
+                cnn.OpenSection();
+                string query = string.Format(@"Select *
+								                FROM GIAOVIEN
+									             Where
+									 		        MaGV = '{0}'
+									 		        AND
+									 		        PasswordHash = HASHBYTES('SHA2_512', '{1}'+CAST(Salt AS NVARCHAR(36)))"
+                                            , username, password
+                                            );
+                SqlCommand cmd = new SqlCommand(query, cnn.connect);
+                SqlDataReader dr = null;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    gvDTO = new GIAOVIENDTO();
+                    gvDTO.MaGV = Convert.ToString(dr["MaGV"]);
+                    gvDTO.TenGV = Convert.ToString(dr["TenGV"]);
+                    gvDTO.STD = Convert.ToString(dr["SDT"]);
+                }
+                return gvDTO;
+            }
+            catch
+            {
+                // throw ex;
+                return null;
+            }
+            //finally
+            //{
+
+            //}
+           
+
         }
-        public static DataTable layDanhSachDoAnPhuTrach_Mon(string maGV, string maMon)
+        //public static List<string> layDanhSachMon_PhuTrach(string maGV)
+        //{
+        //    List<string> KQ = new List<string>();
+        //    return KQ;
+        //}
+        //public static DataTable layDanhSachDoAnPhuTrach_Mon(string maGV, string maMon)
+        //{
+        //    string sql = string.Format(@"")
+        //}
+        public static DataTable layDSMONPT(string magv)
         {
-            DataTable dt = new DataTable();
-            return dt;
+            Connect_Helper cnn = new Connect_Helper();
+            try
+            {
+                cnn.OpenSection();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("GET_ALL_SUBJECT", cnn.connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                cnn.CloseSection();
+                return dt;
+                
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static string DangNhap(string magv, string password)
@@ -84,6 +142,21 @@ namespace DAO
             {
                 return "";
             }
+        }
+        public static DataTable layDanhSachDoAnPhuTrach_Mon(string maGV, string mamon)
+        {
+            string sql = string.Format(@"SELECT da.MaDoAn,
+                                                da.TenDoAn,
+                                                da.LoaiDoAn,
+                                                da.SLN_ToiDa,
+                                                da.SLSV_ToiDa,
+                                                da.NgayKTDK,
+                                                da.NgayNop
+                                         FROM dbo.DOAN da, dbo.GV_PHUTRACH_DA pt
+                                         WHERE pt.MaGV = '{0}' 
+                                               AND pt.MaDoAn = da.MaDoAn
+                                               AND da.MaMon = '{1}'", maGV, mamon);
+            return new Connect_Helper().GetDataTable(sql);
         }
     }
 }
