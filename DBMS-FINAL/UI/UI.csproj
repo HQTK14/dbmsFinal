@@ -59,6 +59,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAPNHATDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAPNHATDA.Designer.cs">
+      <DependentUpon>CAPNHATDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSDKDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSDKDA.Designer.cs">
+      <DependentUpon>DSDKDA.cs</DependentUpon>
+    </Compile>
     <Compile Include="GVRDA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,12 @@
     <Compile Include="TAOTKSV.Designer.cs">
       <DependentUpon>TAOTKSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="THEMDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="THEMDA.Designer.cs">
+      <DependentUpon>THEMDA.cs</DependentUpon>
+    </Compile>
     <Compile Include="TKSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +127,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CAPNHATDA.resx">
+      <DependentUpon>CAPNHATDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSDKDA.resx">
+      <DependentUpon>DSDKDA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GVRDA.resx">
       <DependentUpon>GVRDA.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TAOTKSV.resx">
       <DependentUpon>TAOTKSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="THEMDA.resx">
+      <DependentUpon>THEMDA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TKSV.resx">
       <DependentUpon>TKSV.cs</DependentUpon>
